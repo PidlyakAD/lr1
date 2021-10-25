@@ -9,8 +9,6 @@
 #define MAX_VALUE_NAME 16383
 using namespace std;
 
-//punkt2
-
 void ch_takt()
 {
     LARGE_INTEGER chas,time1, time2;
