@@ -19,8 +19,8 @@ void ch_takt()
     QueryPerformanceFrequency(&chas);
     QueryPerformanceCounter(&time2);
     takt = (double(time2.QuadPart - time1.QuadPart) * 1000000 / chas.QuadPart);
-    printf("Частота:%lld Hz \n", chas);
-    printf("Количество тактов: %1.1f мкс\n", takt);
+    printf("Frequency:%lld Hz \n", chas);
+    printf("Kolich taktov: %1.1f mcs\n", takt);
 
 }
 
@@ -28,27 +28,27 @@ int main()
 {
     setlocale(LC_ALL, "RUS");
     
-    //1)display version
+    //1)version
     OSVERSIONINFO OS_ver;
     OS_ver.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
     GetVersionEx(&OS_ver);
-    printf("1.1) Версия Windows OC:%i.%i\n", OS_ver.dwMajorVersion, OS_ver.dwMinorVersion);
+    printf("1.1) Versia Windows OC:%i.%i\n", OS_ver.dwMajorVersion, OS_ver.dwMinorVersion);
     
-    //2)system directory
+    //2)directory
     TCHAR  Buf[SIZE];
     GetSystemDirectory(Buf, SIZE);
     printf("System directory: %s\n", Buf);
 
-    //3)computer name
+    //3)compname
     DWORD siz=sizeof(Buf);
     GetComputerName(Buf, &siz);
     printf("Computer name: %s\n", Buf);
 
-    //user name
+    //username
     GetUserName(Buf, &siz);
     printf("Username: %s\n", Buf);
 
-    //4)disks' volume
+    //4)disks
 
     char buffer[MAX_PATH];
     DWORD BufferLengthe= MAX_PATH;
